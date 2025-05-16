@@ -6,7 +6,11 @@
 */
 
 #include <iostream>
+#include <cassert>
 using namespace std;
+
+//function prototypes
+void enterArray(double nums[],const int size);
 
 /**
 * function main
@@ -14,6 +18,8 @@ using namespace std;
 */
 int main() {
     int choice;
+    const int SIZE = 10;
+    double arr[SIZE] = {};
 
     do {
         cout << "\n1) Enter data";
@@ -24,6 +30,7 @@ int main() {
 
         switch (choice) {
         case 1:
+            enterArray(arr, SIZE);
             break;
         case 2:
             break;
@@ -40,4 +47,17 @@ int main() {
     return 0;
 }
 
+/**
+* function enterArray
+* @param nums the array to enter data into
+* @param size the size of the array
+*/
+void enterArray(double nums[], const int size) {
+    assert(size > 0 && nums!= NULL);
+
+    for (int i = 0; i < size; i++) {
+        cout << "\nEnter value [-1.5 -- 3.5] at " << i << ": "; //@todo need user validation
+        cin >> nums[i];
+    }
+}
 
