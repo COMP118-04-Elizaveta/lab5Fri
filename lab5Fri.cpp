@@ -13,7 +13,29 @@ using namespace std;
 * @return zero
 */
 int main() {
-    cout << "Hello World!\n";
+    int choice;
+
+    do {
+        cout << "\n1) Enter data";
+        cout << "\n2) Sum of negative numbers";
+        cout << "\n3) Exit";
+        cout << "\nEnter choice:";
+        cin >> choice;
+
+        switch (choice) {
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        default:
+            cerr << "\nInvalid choice!";
+            break;
+        }
+
+    } while (choice != 3);
+
 
     return 0;
 }
