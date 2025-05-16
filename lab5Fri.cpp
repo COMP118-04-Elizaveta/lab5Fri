@@ -37,7 +37,7 @@ int main() {
             cout << "\nSum of negative numbers is " << sumOfNeg(arr, SIZE);
             break;
         case 3:
-            break;
+            break; //no code needed
         default:
             cerr << "\nInvalid choice!";
             break;
