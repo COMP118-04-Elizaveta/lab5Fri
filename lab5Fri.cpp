@@ -11,7 +11,7 @@ using namespace std;
 
 //function prototypes
 void enterArray(double nums[],const int size);
-double sumOfNeg(double nums[], const int size);
+double sumOfNeg(const double nums[], const int size);
 
 /**
 * function main
@@ -69,11 +69,16 @@ void enterArray(double nums[], const int size) {
 * @param size the size of the array
 * @return Returns the final sum of the negative numbers
 */
-double sumOfNeg(double nums[], const int size) {
+double sumOfNeg(const double nums[], const int size) {
     assert(size > 0 && nums != NULL);
 
     double sum = 0;
 
+    for (int i = 0; i < size; i++) {
+        if (nums[i] < 0) {
+            sum += nums[i];
+        }
+    }
 
     return sum;
 }
