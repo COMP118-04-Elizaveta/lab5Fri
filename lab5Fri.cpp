@@ -10,7 +10,7 @@
 using namespace std;
 
 //function prototypes
-void enterArray(double nums[],const int size);
+void enterArray(double nums[],const int size, const double sRange, const double eRange);
 double sumOfNeg(const double nums[], const int size);
 
 /**
@@ -20,6 +20,7 @@ double sumOfNeg(const double nums[], const int size);
 int main() {
     int choice;
     const int SIZE = 10;
+    const double START = -1.5, END = 3.5;
     double arr[SIZE] = {};
 
     do {
@@ -31,7 +32,7 @@ int main() {
 
         switch (choice) {
         case 1:
-            enterArray(arr, SIZE);
+            enterArray(arr, SIZE, START, END);
             break;
         case 2:
             cout << "\nSum of negative numbers is " << sumOfNeg(arr, SIZE);
@@ -54,12 +55,14 @@ int main() {
 * @param nums the array to enter data into
 * @param size the size of the array
 */
-void enterArray(double nums[], const int size) {
+void enterArray(double nums[], const int size, const double sRange, const double eRange) {
     assert(size > 0 && nums!= NULL);
 
     for (int i = 0; i < size; i++) {
-        cout << "\nEnter value [-1.5 -- 3.5] at " << i << ": "; //@todo need user validation
-        cin >> nums[i];
+        do {
+            cout << "\nEnter value [" << sRange << "--" << eRange <<"] at " << i << ": ";
+            cin >> nums[i];
+        } while (nums[i] < sRange || nums[i] > eRange);
     }
 }
 
