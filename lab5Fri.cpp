@@ -46,7 +46,6 @@ int main() {
 
     } while (choice != 3);
 
-
     return 0;
 }
 
@@ -54,6 +53,8 @@ int main() {
 * function enterArray
 * @param nums the array to enter data into
 * @param size the size of the array
+* @param sRange the start of the range of acceptable values
+* @param eRange the end of the range of acceptable values
 */
 void enterArray(double nums[], const int size, const double sRange, const double eRange) {
     assert(size > 0 && nums!= NULL);
